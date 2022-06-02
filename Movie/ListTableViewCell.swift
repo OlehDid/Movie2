@@ -2,30 +2,41 @@
 //  ListTableViewCell.swift
 //  Movie
 //
-//  Created by Lampa on 09.05.2022.
+//  Created by Lampa on 30.05.2022.
 //
 
 import UIKit
 
-class ListTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var imageMovie: UIImageView!
-    
-    @IBOutlet weak var titleMovie: UILabel!
-    
-    @IBOutlet weak var overviewMovie: UILabel!
-    
-    @IBOutlet weak var releaseMovie: UILabel!
+class ListTableViewCell: UITableViewCell {
+    @IBOutlet weak var listImageView: UIImageView!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var releaseLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        resetContent()
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        resetContent()
     }
-
+    
+    private func resetContent() {
+        listImageView.image = nil
+        titleLabel.text = nil
+        overviewLabel.text = nil
+        releaseLabel.text = nil
+    }
+    func update(movie: Movie) {
+        titleLabel.text = movie.originalTitle
+        overviewLabel.text = movie.overview
+        releaseLabel.text = movie.releaseDate
+        
+        let urlString = mainURL+"w500"+(movie.posterPath)
+        let url = URL(string: urlString)
+        listImageView.sd_setImage(with: url, completed: nil)
+    }
 }

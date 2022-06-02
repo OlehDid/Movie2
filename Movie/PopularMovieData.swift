@@ -8,23 +8,21 @@
 import Foundation
 
 struct PopularMovieData: Decodable {
-    let results: [Result]
-    
+    let results: [Movie]
     private enum CodingKeys: String, CodingKey {
         case results
     }
-      
 }
 
-struct Result: Decodable {
+struct Movie: Decodable {
     let backdropPath: String
     let posterPath: String
     let originalTitle: String
     let title: String
     let overview: String
-    let releaseDate:String
+    let releaseDate: String
     let voteAverage: Double
-    var voteAveregeString: String {
+    var voteAverageString: String {
         return "\(voteAverage)"
     }
     

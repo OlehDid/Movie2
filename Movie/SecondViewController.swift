@@ -8,60 +8,39 @@
 import UIKit
 
 class SecondViewController: UIViewController {
-
-    @IBOutlet weak var imageSecond: UIImageView!
-    @IBOutlet weak var overviewSecond: UILabel!
-    @IBOutlet weak var titleSecond: UILabel!
-    @IBOutlet weak var rating: UILabel!
     
-    @IBOutlet weak var releaseDate: UILabel!
+    @IBOutlet weak var secondImageView: UIImageView!
+    @IBOutlet weak var overviewLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var ratingLabel: UILabel!
+    @IBOutlet weak var releaseLabel: UILabel!
     
-    var moveOpen:Result?
-    
-    
+    var movie: Movie?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-            
-        overviewSecond.text = moveOpen?.overview
-        titleSecond.text = moveOpen?.title
-        releaseDate.text = moveOpen?.releaseDate
-        rating.text = moveOpen?.voteAveregeString
-        
-        let urlString = "https://image.tmdb.org/t/p/w1280/"+(moveOpen?.backdropPath)!
-        let url = URL(string: urlString)
-        imageSecond.downloaded(from: url!)
+        setupUI()
     }
- 
+    
+    private func setupUI() {
+        overviewLabel.text = movie?.overview
+        titleLabel.text = movie?.title
+        releaseLabel.text = movie?.releaseDate
+        ratingLabel.text = movie?.voteAverageString
+        
+        guard let backdropPath = movie?.backdropPath else { return }
+        let urlString = mainURL + "w1280/" + backdropPath
+        let url = URL(string: urlString)
+        secondImageView.sd_setImage(with: url, completed: nil)
+    }
+    
     @IBAction func alertAction(_ sender: UIButton) {
-        let alert = UIAlertController(title: "Movie name is", message: "\(String(describing: (titleSecond.text)!))", preferredStyle: .alert)
-        let okBtn = UIAlertAction(title: "OK", style: .default, handler: nil)
-        let cancelBtn = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let alert = UIAlertController(title: alertTitle, message: movie?.title, preferredStyle: .alert)
+        let okBtn = UIAlertAction(title: ok, style: .default, handler: nil)
+        let cancelBtn = UIAlertAction(title: cancel, style: .cancel, handler: nil)
         alert.addAction(okBtn)
         alert.addAction(cancelBtn)
-        
         present(alert, animated: true, completion: nil)
-        
     }
 }
 
-extension UIImageView {
-    func downloaded(from url: URL, contentMode mode: ContentMode = .scaleAspectFill) {
-        contentMode = mode
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            guard
-                let httpURLResponse = response as? HTTPURLResponse, httpURLResponse.statusCode == 200,
-                let mimeType = response?.mimeType, mimeType.hasPrefix("image"),
-                let data = data, error == nil,
-                let image = UIImage(data: data)
-                else { return }
-            DispatchQueue.main.async() { [weak self] in
-                self?.image = image
-            }
-        }.resume()
-    }
-    func downloaded(from link: String, contentMode mode: ContentMode = .scaleAspectFill) {
-        guard let url = URL(string: link) else { return }
-        downloaded(from: url, contentMode: mode)
-    }
-}
