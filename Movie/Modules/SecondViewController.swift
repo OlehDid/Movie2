@@ -29,7 +29,7 @@ class SecondViewController: UIViewController {
         ratingLabel.text = movie?.voteAverageString
         
         guard let backdropPath = movie?.backdropPath else { return }
-        let urlString = mainURL + "w1280/" + backdropPath
+        let urlString = mainURLimage + "w1280/" + backdropPath
         let url = URL(string: urlString)
         secondImageView.sd_setImage(with: url, completed: nil)
     }

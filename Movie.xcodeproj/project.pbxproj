@@ -114,6 +114,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BC25503A2857CCEB005F795C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				BC31B4EF28475CED00E42CCC /* Constants.swift */,
+				BCEA04A02825B3DC0083B004 /* AppDelegate.swift */,
+				BCEA04A92825B3DD0083B004 /* Assets.xcassets */,
+				BCEA04AB2825B3DD0083B004 /* LaunchScreen.storyboard */,
+				BCEA04A22825B3DC0083B004 /* SceneDelegate.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		BC32EBB52857C8C500CEECCA /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				BC576CB1282945F100D4E373 /* MainViewController.swift */,
+				BC89AAB82829B29E003C1DA0 /* SecondViewController.swift */,
+				BC315208284559690070B7C9 /* ListTableViewCell.swift */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		BC32EBB82857C92900CEECCA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				BCEA04A62825B3DC0083B004 /* Main.storyboard */,
+				BC315209284559690070B7C9 /* ListTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		BC32EBB92857C94C00CEECCA /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BC43A46F282A9F2F008B5339 /* PopularMovieData.swift */,
+				BC91D481283250AB00734A1F /* Parse.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		BCEA04942825B3DC0083B004 = {
 			isa = PBXGroup;
 			children = (
@@ -139,18 +179,10 @@
 		BCEA049F2825B3DC0083B004 /* Movie */ = {
 			isa = PBXGroup;
 			children = (
-				BCEA04A02825B3DC0083B004 /* AppDelegate.swift */,
-				BCEA04A22825B3DC0083B004 /* SceneDelegate.swift */,
-				BC576CB1282945F100D4E373 /* MainViewController.swift */,
-				BC315208284559690070B7C9 /* ListTableViewCell.swift */,
-				BC315209284559690070B7C9 /* ListTableViewCell.xib */,
-				BC91D481283250AB00734A1F /* Parse.swift */,
-				BCEA04A62825B3DC0083B004 /* Main.storyboard */,
-				BC43A46F282A9F2F008B5339 /* PopularMovieData.swift */,
-				BC89AAB82829B29E003C1DA0 /* SecondViewController.swift */,
-				BC31B4EF28475CED00E42CCC /* Constants.swift */,
-				BCEA04A92825B3DD0083B004 /* Assets.xcassets */,
-				BCEA04AB2825B3DD0083B004 /* LaunchScreen.storyboard */,
+				BC32EBB52857C8C500CEECCA /* Modules */,
+				BC32EBB92857C94C00CEECCA /* Services */,
+				BC32EBB82857C92900CEECCA /* View */,
+				BC25503A2857CCEB005F795C /* Helpers */,
 				BCEA04AE2825B3DD0083B004 /* Info.plist */,
 			);
 			path = Movie;
