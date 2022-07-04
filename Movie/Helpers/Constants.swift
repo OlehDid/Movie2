@@ -6,10 +6,12 @@
 //
 
 import Foundation
-let mainURLimage = "https://image.tmdb.org/t/p/"
-let alertTitle = "Movie name is"
-let ok = "OK"
-let cancel = "Cancel" 
-let baseURL = "https://api.themoviedb.org/3/movie/popular"
-let apiKey = "ed0957c3c3f2acb89d27b394e9612d5e"
-let langvURL = "language=en-US"
+struct Constants {
+    static let mainURLimage = "https://image.tmdb.org/t/p/"
+    static let alertTitle = "Movie name is"
+    static let ok = "OK"
+    static let cancel = "Cancel"
+    static let baseURL = "https://api.themoviedb.org/3/movie/popular"
+    static let apiKey = "ed0957c3c3f2acb89d27b394e9612d5e"
+    static let langpageURL = "language=en-US&page="
+}

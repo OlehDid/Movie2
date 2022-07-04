@@ -35,7 +35,7 @@ class ListTableViewCell: UITableViewCell {
         overviewLabel.text = movie.overview
         releaseLabel.text = movie.releaseDate
         
-        let urlString = mainURLimage+"w500"+(movie.posterPath)
+        let urlString = Constants.mainURLimage + "w500" + (movie.posterPath)
         let url = URL(string: urlString)
         listImageView.sd_setImage(with: url, completed: nil)
     }

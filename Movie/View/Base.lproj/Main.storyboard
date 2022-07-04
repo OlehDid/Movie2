@@ -105,9 +105,6 @@
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TitlePre" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E0X-l4-eyV">
                                 <rect key="frame" x="28" y="208" width="51.5" height="17"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" priority="999" constant="177" id="hvN-zl-GU7"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -130,6 +127,7 @@
                         <viewLayoutGuide key="safeArea" id="Zbe-gv-Bdv"/>
                         <color key="backgroundColor" red="0.043137254901960784" green="0.015686274509803921" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="y50-0y-LgD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="E0X-l4-eyV" secondAttribute="trailing" constant="8" symbolic="YES" id="81L-lR-OIz"/>
                             <constraint firstItem="Zbe-gv-Bdv" firstAttribute="trailing" secondItem="cGu-QK-7OL" secondAttribute="trailing" constant="29" id="97D-8e-xH2"/>
                             <constraint firstItem="Htv-pA-XsX" firstAttribute="top" secondItem="2aM-oK-q3q" secondAttribute="bottom" constant="8" id="ASQ-7T-XJM"/>
                             <constraint firstItem="Zbe-gv-Bdv" firstAttribute="trailing" secondItem="2aM-oK-q3q" secondAttribute="trailing" constant="32" id="Dxe-ZG-EB1"/>
